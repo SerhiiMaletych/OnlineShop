@@ -48,7 +48,7 @@ public class User implements UserDetails {
 
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Products> productsList;
+    private List<Mask> maskList;
 
 
     public boolean isAdmin() {

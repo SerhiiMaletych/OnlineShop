@@ -1,4 +1,4 @@
 package OnlineShop.OnlineShop.model;
 
-public class Products {
+public class Mask {
 }
