@@ -1,9 +1,6 @@
 package OnlineShop.OnlineShop.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -14,12 +11,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 @Table(name = "orders")
-@Getter
-@Setter
+@Data
+@Entity
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id", "user", "maskList"})
+@AllArgsConstructor
 public class Order {
 
     @Id

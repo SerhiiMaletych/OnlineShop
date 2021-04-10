@@ -1,9 +1,6 @@
 package OnlineShop.OnlineShop.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -14,12 +11,12 @@ import java.util.Set;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-@Entity
+
 @Table(name = "userr")
-@Getter
-@Setter
+@Data
+@Entity
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id", "username", "activationCode"})
+@AllArgsConstructor
 public class User implements UserDetails {
 
     @Id
