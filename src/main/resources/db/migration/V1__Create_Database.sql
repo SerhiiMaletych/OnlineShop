@@ -32,35 +32,31 @@ create table if not exists orders
     primary key (id)
 );
 
-create table if not exists orders_mask_list
-(
-    order_id        int8 not null,
-    mask_list_id    int8 not null,
-    mask_list_order int4 not null,
-    primary key (order_id, mask_list_order)
+create table if not exists orders_mask_list (
+                                                order_id int8 not null,
+                                                mask_list_id int8 not null,
+                                                mask_list_order int4 not null,
+                                                primary key (order_id, mask_list_order)
 );
 
-create table if not exists user_role
-(
-    user_id int8 not null,
-    roles   varchar(255)
+create table if not exists user_role (
+                                         user_id int8 not null,
+                                         roles varchar(255)
 );
 
-create table if not exists userr
-(
-    id              int8         not null,
-    activation_code varchar(255),
-    active          boolean      not null,
-    email           varchar(255),
-    password        varchar(255) not null,
-    username        varchar(255) not null,
-    primary key (id)
+create table if not exists userr (
+                                     id int8 not null,
+                                     activation_code varchar(255),
+                                     active boolean not null,
+                                     email varchar(255),
+                                     password varchar(255) not null,
+                                     username varchar(255) not null,
+                                     primary key (id)
 );
 
-create table if not exists userr_mask_list
-(
-    user_id      int8 not null,
-    mask_list_id int8 not null
+create table if not exists userr_mask_list (
+                                               user_id int8 not null,
+                                               mask_list_id int8 not null
 );
 
 alter table if exists orders
