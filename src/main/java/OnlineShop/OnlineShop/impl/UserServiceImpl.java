@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         return true;
     }
 
-
+// will add this later
 //    @Override
 //    public void sendMessage(User user) {
 //        if (!StringUtils.isEmpty(user.getEmail())) {

@@ -47,4 +47,20 @@ public class MainController {
 
         return "product";
     }
+
+        @GetMapping("/search")
+    public String search(
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.ASC, size = 12) Pageable pageable,
+            @RequestParam String filter,
+            Model model
+    ) {
+        Page<Mask> page = maskService.findByManufacturerOrMaskTitle(filter, filter, pageable);
+        int[] pagination = ControllerUtils.computePagination(page);
+
+        model.addAttribute("pagination", pagination);
+        model.addAttribute("url", "/menu");
+        model.addAttribute("page", page);
+
+        return "menu";
+    }
 }
